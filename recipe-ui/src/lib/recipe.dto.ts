@@ -7,3 +7,5 @@ export interface Recipe {
   ingredients: string[];
   link: string | SafeResourceUrl;
 }
+
+export type CreateRecipe = Omit<Recipe, "id">

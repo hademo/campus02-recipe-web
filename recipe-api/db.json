@@ -30,6 +30,27 @@
         "6 TL Sahnefest"
       ],
       "link": "https://www.youtube.com/embed/UaP_JGyRbU4"
+    },
+    {
+      "name": "Palatschinken",
+      "description": "Palatschinken sind cool und gesnd^",
+      "ingredients": [
+        "10x Eier",
+        "500g Zucker",
+        "Butter"
+      ],
+      "link": "https://www.youtube.com/embed/--Tp-Qf889M",
+      "id": 7
+    },
+    {
+      "name": "Pizza",
+      "description": "Pizza lorem ipsum dolro sit amet",
+      "ingredients": [
+        "800g Teig",
+        "Salsa"
+      ],
+      "link": "https://www.youtube.com/embed/G0PSxsM2czc",
+      "id": 8
     }
   ]
 }

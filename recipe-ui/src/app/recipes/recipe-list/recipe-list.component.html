@@ -1,23 +1,34 @@
 <div class="recipe-list">
     <mat-form-field class="recipe-list-search">
         <mat-label>Kochrezept Suche</mat-label>
-        <input matInput placeholder="Kochrezept suchen..." (keyup)="onSearchChange">
+        <input matInput placeholder="Kochrezept suchen..." (keyup)="onSearchChange($event)">
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="h-full">Kochrezept hinzufügen</button>
+    <div>
+        <button mat-raised-button color="primary" class="h-full" routerLink="/recipes/create">Kochrezept
+            hinzufügen</button>
+    </div>
 
     <div class="grid grid-cols-12 gap-2">
-        <div *ngFor="let recipe of filteredRecipes" class="recipe-card col-span-4">
+        <div *ngFor="let recipe of filteredRecipes"
+            class="flex flex-col gap-2 border border-gray-200 p-2 shadow-md col-span-6">
             <div class="w-full">
                 <div class="flex">
-                    <h1 class="flex-grow">{{recipe.name}}</h1>
+                    <span class="text-lg flex-grow">{{recipe.name}}</span>
                     <a routerLink="/recipes/{{recipe.id}}">
                         <button mat-raised-button color="primary">Rezept
                             Öffnen</button>
                     </a>
                 </div>
-                <iframe [src]="recipe.link" width="100%" height="250px"></iframe>
             </div>
+            <iframe [src]="recipe.link" width="100%" height="250px"></iframe>
+            <mat-chip-listbox>
+                <mat-chip-option *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</mat-chip-option>
+            </mat-chip-listbox>
         </div>
+
+        <button mat-mini-fab routerLink="/recipes/create">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
 </div>

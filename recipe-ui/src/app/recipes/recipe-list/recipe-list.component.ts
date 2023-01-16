@@ -15,7 +15,7 @@ export class RecipeListComponent implements OnInit {
   constructor(
     private readonly recipeService: RecipeService,
     private readonly sanitizer: DomSanitizer
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.recipeService.findAll().subscribe((recipes) => {
@@ -28,7 +28,7 @@ export class RecipeListComponent implements OnInit {
     const value = (event.target as HTMLInputElement).value.toLowerCase();
     console.log('onsearchchange', value);
 
-    if (!value) {
+    if (!value || value.length === 0) {
       this.filteredRecipes = [...this.recipes];
       return;
     }

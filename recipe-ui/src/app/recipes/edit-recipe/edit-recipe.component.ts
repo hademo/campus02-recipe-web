@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { NgModel } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../../lib/recipe.dto';
 import { RecipeService } from '../../services/recipe.service';
 
@@ -11,21 +11,19 @@ import { RecipeService } from '../../services/recipe.service';
 })
 export class EditRecipeComponent {
   recipeId?: number;
-  recipe?: Recipe;
+  recipe: Recipe = {
+    id: 0,
+    name: "",
+    description: "",
+    link: "",
+    ingredients: []
+  };
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private recipeService: RecipeService,
-    private fb: FormBuilder
-  ) {}
-
-  editForm = this.fb.nonNullable.group({
-    id: [0],
-    name: [''],
-    description: [''],
-    ingredients: this.fb.array<string>(['']),
-    link: [''],
-  });
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -34,31 +32,54 @@ export class EditRecipeComponent {
         this.recipeId = +recipeId;
         this.recipeService.findById(this.recipeId).subscribe((recipe) => {
           this.recipe = recipe;
-          this.editForm.controls.ingredients = new FormArray(
-            recipe.ingredients.map((ingredient) => this.fb.control(ingredient))
-          );
-          this.editForm.setValue({
-            id: this.recipe.id,
-            name: this.recipe.name,
-            description: this.recipe.description,
-            ingredients: this.recipe.ingredients,
-            link: this.recipe.link as string,
-          });
         });
       }
     });
   }
 
-  get ingredients() {
-    return this.editForm.controls['ingredients'] as FormArray;
+  deleteIngredient(index: number) {
+    this.recipe.ingredients.splice(index, 1);
   }
 
-  deleteIngredient(lessonIndex: number) {
-    this.ingredients.removeAt(lessonIndex);
+  addIngredient(e: Event) {
+    e.preventDefault();
+    this.recipe.ingredients.push("");
   }
 
-  addIngredient() {
-    const ingredientForm = this.fb.control(['xd']);
-    this.ingredients.push(ingredientForm);
+  getErrors(control: NgModel) {
+    const errors = [];
+
+    if (control.invalid && (control.dirty || control.touched)) {
+      if (control.hasError("required"))
+        errors.push("Dieses Feld ist ein Pflichtfeld")
+
+      if (control.hasError("minlength"))
+        errors.push("Dieses Feld ist zu kurz")
+
+      if (control.hasError("maxlength"))
+        errors.push("Dieses Feld ist zu lang")
+
+      if (control.hasError("pattern"))
+        errors.push(`Dieses Feld muss folgendem Pattern entsprechen: ${control.getError("pattern").requiredPattern}`)
+    }
+
+    return errors.join(". ");
+  }
+
+  save() {
+    console.log("Update", this.recipe);
+    this.recipeService.update(this.recipe)
+      .subscribe(() => this.router.navigate(["/", "recipes"]));
+  }
+
+  delete() {
+    if (window.confirm("Möchtest du wirklich dieses Rezept löschen?")) {
+      this.recipeService.delete(this.recipe)
+        .subscribe(() => this.router.navigate(["/", "recipes"]));
+    }
+  }
+
+  track(index: number, item: string) {
+    return index;
   }
 }
