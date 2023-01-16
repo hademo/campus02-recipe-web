@@ -1,0 +1,43 @@
+<div class="mx-auto">
+    <form [formGroup]="editForm" class="example-form flex flex-col gap-2">
+        <mat-form-field class="example-full-width">
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id" required />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Ex. Pizza" required minlength="3" maxlength="15"
+                pattern="[a-zA-Z ]*">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Beschreibung</mat-label>
+            <textarea matInput formControlName="description" placeholder="Beschreibung des Rezepts..."
+                rows="7"></textarea>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>YouTube-URL</mat-label>
+            <input matInput formControlName="link" required minlength="3">
+        </mat-form-field>
+
+
+        <div formArrayName="ingredients" class="flex flex-wrap gap-2 items-center">
+            <div *ngFor="let ingredient of editForm.controls.ingredients.controls; let i = index"
+                class="lesson-form-row">
+                <mat-form-field appearance="fill">
+                    <input matInput [formControlName]="i" placeholder="Zutate Name..." required>
+                </mat-form-field>
+                <mat-icon class="cursor-pointer" (click)="deleteIngredient(i)">
+                    delete_forever</mat-icon>
+            </div>
+            <button mat-mini-fab (click)="addIngredient()">
+                <mat-icon class="add-course-btn">add</mat-icon>
+            </button>
+        </div>
+
+        <button mat-raised-button color="primary">Speichern</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "recipe-ui"
+    },
+    {
+      "path": "recipe-api"
+    }
+  ],
+  "settings": {}
+}

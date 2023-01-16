@@ -1,0 +1,12 @@
+.recipe-list {
+  margin: 25px;
+  @apply flex flex-col gap-2;
+}
+
+.recipe-list-search {
+  width: 100%;
+}
+
+.recipe-card {
+  @apply border border-gray-200 p-2 shadow-md;
+}

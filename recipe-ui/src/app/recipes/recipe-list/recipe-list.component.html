@@ -1,1 +1,23 @@
-<p>recipe-list works!</p>
+<div class="recipe-list">
+    <mat-form-field class="recipe-list-search">
+        <mat-label>Kochrezept Suche</mat-label>
+        <input matInput placeholder="Kochrezept suchen..." (keyup)="onSearchChange">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="h-full">Kochrezept hinzufügen</button>
+
+    <div class="grid grid-cols-12 gap-2">
+        <div *ngFor="let recipe of filteredRecipes" class="recipe-card col-span-4">
+            <div class="w-full">
+                <div class="flex">
+                    <h1 class="flex-grow">{{recipe.name}}</h1>
+                    <a routerLink="/recipes/{{recipe.id}}">
+                        <button mat-raised-button color="primary">Rezept
+                            Öffnen</button>
+                    </a>
+                </div>
+                <iframe [src]="recipe.link" width="100%" height="250px"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
