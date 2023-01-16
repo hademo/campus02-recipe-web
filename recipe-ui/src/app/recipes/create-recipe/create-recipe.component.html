@@ -1,5 +1,6 @@
 <div class="max-w-2xl mt-24 p-4 mx-auto">
     <form #form="ngForm" class="flex flex-col gap-4">
+        <h1>Rezept erstellen</h1>
         <mat-form-field>
             <mat-label>Name</mat-label>
             <input matInput name="name" placeholder="Ex. Pizza" [(ngModel)]="recipe.name" #name="ngModel" required
