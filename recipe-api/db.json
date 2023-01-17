@@ -25,11 +25,12 @@
       "name": "Tiramisu",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
       "ingredients": [
-        "Tomato",
-        "Cucumber",
-        "Bacon",
-        "Cheese",
-        "Mascarpone"
+        "750 g Mascarpone",
+        "400 g Doppelrahmfrischkäse",
+        "400 g kalte Schlagsahne",
+        "100 g Puderzucker",
+        "1 Pck Vanillezucker oder 1 EL Vanilleextrakt",
+        "6 TL Sahnefest"
       ],
       "link": "https://www.youtube.com/embed/UaP_JGyRbU4",
       "id": 1
@@ -38,7 +39,11 @@
       "username": "dummy-user",
       "name": "Palatschinken",
       "description": "Palatschinken sind cool und gesnd^",
-      "ingredients": ["10x Eier", "500g Zucker", "Butter"],
+      "ingredients": [
+        "10x Eier",
+        "500g Zucker",
+        "Butter"
+      ],
       "link": "https://www.youtube.com/embed/--Tp-Qf889M",
       "id": 2
     },
@@ -46,7 +51,10 @@
       "username": "new-user",
       "name": "Pizza",
       "description": "Pizza lorem ipsum dolro sit amet",
-      "ingredients": ["800g Teig", "Salsa"],
+      "ingredients": [
+        "800g Teig",
+        "Salsa"
+      ],
       "link": "https://www.youtube.com/embed/G0PSxsM2czc",
       "id": 3
     }
