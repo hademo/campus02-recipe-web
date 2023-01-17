@@ -20,7 +20,8 @@ export class IngredientsFormComponent {
   @Output() ingredientsChange = new EventEmitter<string[]>();
 
   deleteIngredient(index: number) {
-    const ingredients = [...this.ingredients].splice(index, 1);
+    const ingredients = [...this.ingredients];
+    ingredients.splice(index, 1);
     this.ingredientsChange.emit(ingredients);
   }
 

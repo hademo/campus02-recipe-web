@@ -18,7 +18,6 @@ import { IngredientsValidatorDirective } from '../lib/shared/validation/ingredie
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
-import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component
     EditRecipeComponent,
     IngredientsFormComponent,
     IngredientsValidatorDirective,
-    RecipeFormComponent,
   ],
   imports: [
     BrowserModule,
