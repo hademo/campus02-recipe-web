@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../../lib/recipe.dto';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeService } from '../../services/recipe/recipe.service';
 
 @Component({
   selector: 'app-edit-recipe',
