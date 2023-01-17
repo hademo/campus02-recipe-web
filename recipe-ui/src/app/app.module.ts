@@ -21,6 +21,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { IngredientsValidatorDirective } from '../lib/shared/validation/ingredients-validator/ingredients-validator.directive';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { RegisterComponent } from './users/register/register.component';
@@ -29,6 +30,7 @@ import { CreateUserComponent } from './users/admin/create-user/create-user.compo
 import { EditUserComponent } from './users/admin/edit-user/edit-user.component';
 import { UserListComponent } from './users/admin/user-list/user-list.component';
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
+import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dial
     EditUserComponent,
     UserListComponent,
     DeleteUserDialogComponent,
+    IngredientsFormComponent,
+    IngredientsValidatorDirective,
   ],
   imports: [
     BrowserModule,

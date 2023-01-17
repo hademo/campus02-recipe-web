@@ -1,4 +1,5 @@
 <div class="max-w-2xl mt-24 p-4 mx-auto">
+    <button mat-raised-button color="primary" routerLink="/recipes" class="mb-4">Zurück zur Rezeptliste</button>
     <form #form="ngForm" class="flex flex-col gap-4">
         <h1>Rezept bearbeiten</h1>
         <mat-form-field>
@@ -22,23 +23,11 @@
             <mat-error>{{getErrors(link)}}</mat-error>
         </mat-form-field>
 
-        <div class="flex flex-wrap gap-2 items-center">
-            <div *ngFor="let item of recipe.ingredients; let i = index; trackBy:track">
-                <mat-form-field appearance="fill">
-                    <input matInput name="ingredient_{{i}}" placeholder="Zutat Name..." required minlength="3"
-                        [(ngModel)]="recipe.ingredients[i]" #ingredient="ngModel">
-                    <mat-error>{{getErrors(ingredient)}}</mat-error>
-                </mat-form-field>
-                <mat-icon class="cursor-pointer" (click)="deleteIngredient(i)">
-                    delete_forever</mat-icon>
-            </div>
-            <button mat-mini-fab (click)="addIngredient($event)">
-                <mat-icon class="add-course-btn">add</mat-icon>
-            </button>
-        </div>
+        <app-ingredients-form [(ingredients)]="recipe.ingredients"></app-ingredients-form>
 
         <div class="grid grid-cols-2 gap-2">
-            <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="save()">Speichern</button>
+            <button mat-raised-button color="primary" [disabled]="form.invalid || ingredientsFormComponent?.invalid"
+                (click)="save()">Speichern</button>
             <button mat-raised-button color="warn" (click)="delete()">Löschen</button>
         </div>
     </form>
