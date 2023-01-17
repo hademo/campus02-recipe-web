@@ -1,0 +1,15 @@
+<form class="flex flex-col gap-2" #form="ngForm">
+    <div class="flex gap-1 items-center" *ngFor="let item of ingredients; let i = index; trackBy:track">
+        <mat-form-field appearance="fill" class="flex-grow">
+            <input matInput name="ingredient_{{i}}" placeholder="Zutat*" required minlength="3"
+                [ngModel]="ingredients[i]" (ngModelChange)="updateIngredient($event, i)" ingredient
+                #ingredient="ngModel" />
+            <mat-error>{{getErrors(ingredient)}}</mat-error>
+        </mat-form-field>
+        <mat-icon class="cursor-pointer" (click)="deleteIngredient(i)">
+            delete_forever</mat-icon>
+    </div>
+    <button mat-mini-fab (click)="addIngredient($event)">
+        <mat-icon class="add-course-btn">add</mat-icon>
+    </button>
+</form>

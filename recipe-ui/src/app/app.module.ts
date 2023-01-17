@@ -14,8 +14,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { IngredientsValidatorDirective } from '../lib/shared/validation/ingredients-validator/ingredients-validator.directive';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
+import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
+import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component
     RecipeListComponent,
     CreateRecipeComponent,
     EditRecipeComponent,
+    IngredientsFormComponent,
+    IngredientsValidatorDirective,
+    RecipeFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +41,9 @@ import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
