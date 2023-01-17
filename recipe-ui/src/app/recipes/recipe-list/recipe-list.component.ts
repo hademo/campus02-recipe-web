@@ -15,7 +15,7 @@ export class RecipeListComponent implements OnInit {
   constructor(
     private readonly recipeService: RecipeService,
     private readonly sanitizer: DomSanitizer
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.recipeService.findAll().subscribe((recipes) => {
@@ -45,5 +45,9 @@ export class RecipeListComponent implements OnInit {
         recipe.link as string
       ),
     }));
+  }
+
+  public toPdf(recipe: Recipe) {
+    this.recipeService.toPdf(recipe);
   }
 }
