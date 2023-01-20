@@ -22,9 +22,6 @@ export class IngredientsValidatorDirective implements Validator {
   validate(c: AbstractControl): ValidationErrors | null {
     const validIngredients: string[] = [
       'Tomato',
-      'Cucumber',
-      'Bacon',
-      'Cheese',
       'Mascarpone',
       'Schlagsahne',
       'Zucker',
