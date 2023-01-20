@@ -26,6 +26,10 @@ export class IngredientsValidatorDirective implements Validator {
       'Bacon',
       'Cheese',
       'Mascarpone',
+      'Schlagsahne',
+      'Zucker',
+      'Eier',
+      'Butter'
     ];
 
     if (c.value && validIngredients.indexOf(c.value) === -1) {
