@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+      <mat-error *ngIf="!loginValid">
+        Kombination aus Username und Password ist nicht korrekt!
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+        <mat-error>
+          Bitte Username eingeben!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" name="password" required>
+        <mat-error>
+          Bitte Passwort eingeben!
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>

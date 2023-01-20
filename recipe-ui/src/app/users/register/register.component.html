@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-content>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+      <h2>Registrieren</h2>
+      <mat-error *ngIf="registerFailed">
+        Registrierung fehlgeschlagen!
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+        <mat-error>
+          Bitte Username eingeben!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+        <mat-error>
+          Bitte Email eingeben!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" name="password" required>
+        <mat-error>
+          Bitte Passwort eingeben!
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!registerForm.form.valid">Registrieren</button>
+    </form>
+  </mat-card-content>
+</mat-card>

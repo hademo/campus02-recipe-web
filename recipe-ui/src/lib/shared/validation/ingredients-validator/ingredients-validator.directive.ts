@@ -22,10 +22,11 @@ export class IngredientsValidatorDirective implements Validator {
   validate(c: AbstractControl): ValidationErrors | null {
     const validIngredients: string[] = [
       'Tomato',
-      'Cucumber',
-      'Bacon',
-      'Cheese',
       'Mascarpone',
+      'Schlagsahne',
+      'Zucker',
+      'Eier',
+      'Butter'
     ];
 
     if (c.value && validIngredients.indexOf(c.value) === -1) {

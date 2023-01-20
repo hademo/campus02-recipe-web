@@ -1,4 +1,41 @@
-<div class="max-w-7xl mt-14 mx-auto">
+<mat-toolbar color="primary">
+  <span>
+    <button mat-button routerLink="/">
+      {{title}}
+      <mat-icon>fastfood</mat-icon>
+    </button>
+  </span>
+  <span class="spacer"></span>
+  <div *ngIf="isAuthenticated()">
+    <button mat-button [mat-menu-trigger-for]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
+  </div>
+  <div *ngIf="!isAuthenticated()">
+    <button mat-button routerLink="/login">
+      <mat-icon>power_settings_new</mat-icon>
+      Login
+    </button>
+    <button mat-button routerLink="/register">
+      <mat-icon>app_registration</mat-icon>
+      Registrieren
+    </button>
+  </div>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+  <button mat-button routerLink="/recipes">
+    <mat-icon>food_bank</mat-icon>
+    Rezepte
+  </button>
+  <br>
+  <button mat-button routerLink="/users" *ngIf="isAdmin()">
+    <mat-icon>account_box</mat-icon>
+    Benutzer
+  </button>
+</mat-menu>
 
-    <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

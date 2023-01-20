@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipeService } from 'src/app/services/recipe/recipe.service';
 import { CreateRecipe } from 'src/lib/recipe.dto';
 import { getErrors } from '../../../lib/get-errors';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';

@@ -3,7 +3,7 @@ import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { getErrors } from '../../../lib/get-errors';
 import { Recipe } from '../../../lib/recipe.dto';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeService } from '../../services/recipe/recipe.service';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';
 
 @Component({
@@ -59,3 +59,4 @@ export class EditRecipeComponent {
     }
   }
 }
+

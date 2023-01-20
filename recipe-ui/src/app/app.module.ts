@@ -14,9 +14,22 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { IngredientsValidatorDirective } from '../lib/shared/validation/ingredients-validator/ingredients-validator.directive';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
+import { RegisterComponent } from './users/register/register.component';
+import { LoginComponent } from './users/login/login.component';
+import { CreateUserComponent } from './users/admin/create-user/create-user.component';
+import { EditUserComponent } from './users/admin/edit-user/edit-user.component';
+import { UserListComponent } from './users/admin/user-list/user-list.component';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
 
 @NgModule({
@@ -25,6 +38,12 @@ import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients
     RecipeListComponent,
     CreateRecipeComponent,
     EditRecipeComponent,
+    RegisterComponent,
+    LoginComponent,
+    CreateUserComponent,
+    EditUserComponent,
+    UserListComponent,
+    DeleteUserDialogComponent,
     IngredientsFormComponent,
     IngredientsValidatorDirective,
   ],
@@ -40,6 +59,14 @@ import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients
     MatCardModule,
     MatIconModule,
     MatChipsModule,
+    BrowserModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatTableModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
