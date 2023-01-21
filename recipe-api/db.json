@@ -62,6 +62,54 @@
       "link": "https://www.youtube.com/embed/TTAKSB5-5Ew",
       "username": "new-user",
       "id": 4
+    },
+    {
+      "name": "Pizza",
+      "description": "Lorum Ipsum",
+      "ingredients": [
+        "Tomato"
+      ],
+      "link": "https://www.youtube.com/watch?v=yhME5pot33g",
+      "username": "admin-user",
+      "id": 5
+    }
+  ],
+  "menus": [
+    {
+      "name": "Test1",
+      "imageUrl": "testURL1",
+      "entries": [
+        {
+          "name": "Eintrag1"
+        },
+        {
+          "name": "Eintrag2"
+        },
+        {
+          "name": "Eintrag3"
+        },
+        {
+          "name": "Eintrag4"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "",
+      "imageUrl": "",
+      "entries": [],
+      "id": 2
+    },
+    {
+      "name": "",
+      "imageUrl": "",
+      "entries": [],
+      "id": 3
+    }
+  ],
+  "entries": [
+    {
+      "name": "test"
     }
   ]
 }

@@ -1,0 +1,61 @@
+<div class="menu-overview">
+    <h2 class="mat-h2">Übersicht Speisekarten</h2>  
+    <mat-table [dataSource]="menus">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let menu"> {{menu.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let menu"> {{menu.name}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="imageUrl">
+            <mat-header-cell *matHeaderCellDef> Image URL </mat-header-cell>
+            <mat-cell *matCellDef="let menu"> {{menu.imageUrl}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+            <mat-cell *matCellDef="let menu">
+              <button mat-raised-button (click)="editMenu(menu)">Edit</button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+            <mat-cell *matCellDef="let menu">
+              <button mat-raised-button (click)="deleteMenu(menu)">Delete</button>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+<div class="spacer"></div>
+
+
+<div class="create-menu-form">
+    <h2 class="mat-h2">Formular - Speisekarten</h2>  
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="menu.name" name="name" required #name>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Image URL" [(ngModel)]="menu.imageUrl" name="imageUrl" required #imageUrl>
+        </mat-form-field>
+        <div *ngFor="let entry of menu.entries; let i = index">
+            <mat-form-field>
+                <input matInput placeholder="Name" [(ngModel)]="entry.name" name="{{'entry'+i}}" required>
+            </mat-form-field>
+            <button mat-raised-button color="warn" (click)="deleteEntry(i)">Delete</button>
+        </div>
+        <div>
+            <button mat-raised-button color="accent" (click)="addEntry()">Eintrag hinzufügen</button>
+            <button 
+            mat-raised-button color="primary" (click)="createMenu()" type="submit" 
+            [disabled]="!menu.name || !menu.imageUrl || menu.entries.length === 0">
+            Speisekarte erstellen/aktualisieren</button>
+        </div>
+    </form>
+</div>
+    
