@@ -1,0 +1,22 @@
+<form>
+    <div *ngIf="menu">
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="menu.name" name="name" required #name>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Image URL" [(ngModel)]="menu.imageUrl" name="imageUrl" required #imageUrl>
+        </mat-form-field>
+        <div *ngFor="let entry of menu.entries; let i = index">
+            <mat-form-field>
+                <input matInput placeholder="Name" [(ngModel)]="entry.name" name="{{'entry'+i}}" required>
+            </mat-form-field>
+            <button mat-raised-button color="warn" (click)="deleteEntry.emit(i)">Delete</button>
+        </div>
+        <div>
+            <button mat-raised-button color="accent" (click)="addEntry.emit()">Eintrag hinzufügen</button>
+            <button 
+            mat-raised-button color="primary" (click)="createMenu.emit(menu)" type="submit"> 
+            Speisekarte erstellen/aktualisieren</button>
+        </div>
+    </div>
+</form>

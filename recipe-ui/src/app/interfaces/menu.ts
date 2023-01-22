@@ -1,8 +1,8 @@
-import { Entry } from "./entry";
+import { MenuEntry } from "./menuEntry";
 
 export interface Menu {
-    id: number;
+    id?: number;
     name: string;
     imageUrl: string;
-    entries: Entry[];
+    entries: MenuEntry[];
   }

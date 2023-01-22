@@ -32,8 +32,9 @@ import { UserListComponent } from './users/admin/user-list/user-list.component';
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
 import { MenuComponent } from './menu/menu.component';
-import { ReactiveFormsModule } from '@angular/forms';import { MenuService } from './services/menuService/menu.service';
-import { EntryService } from './services/entryService/entry.service';
+import { ReactiveFormsModule } from '@angular/forms';import { MenuService } from './services/menu/menu.service';
+import { MenuValidator } from 'src/lib/shared/validation/menus-validator/menus-validator';
+import { MenuFormComponent } from './menu/menu-form/menu-form.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { EntryService } from './services/entryService/entry.service';
     IngredientsFormComponent,
     IngredientsValidatorDirective,
     MenuComponent,
+    MenuFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,7 @@ import { EntryService } from './services/entryService/entry.service';
     MatDialogModule,
     ReactiveFormsModule,
   ],
-  providers: [MenuService, EntryService],
+  providers: [MenuService, MenuValidator],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
