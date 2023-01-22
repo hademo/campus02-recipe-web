@@ -1,12 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -21,6 +19,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
 import { IngredientsValidatorDirective } from '../lib/shared/validation/ingredients-validator/ingredients-validator.directive';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
@@ -29,12 +28,16 @@ import { LoginComponent } from './users/login/login.component';
 import { CreateUserComponent } from './users/admin/create-user/create-user.component';
 import { EditUserComponent } from './users/admin/edit-user/edit-user.component';
 import { UserListComponent } from './users/admin/user-list/user-list.component';
-import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
+import { DeleteUserDialogComponent } from './users/admin/delete-user-dialog/delete-user-dialog.component';
 import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients-form.component';
 import { MenuComponent } from './menu/menu.component';
-import { ReactiveFormsModule } from '@angular/forms';import { MenuService } from './services/menu/menu.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MenuService } from './services/menu/menu.service';
 import { MenuValidator } from 'src/lib/shared/validation/menus-validator/menus-validator';
 import { MenuFormComponent } from './menu/menu-form/menu-form.component';
+import { LinksValidatorDirective } from 'src/lib/shared/validation/links-validator/links-validator.directive';
+import { LinksFormComponent } from './users/admin/links-form/links-form.component';
+import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validator/email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,9 @@ import { MenuFormComponent } from './menu/menu-form/menu-form.component';
     IngredientsValidatorDirective,
     MenuComponent,
     MenuFormComponent,
+    LinksFormComponent,
+    LinksValidatorDirective,
+    EmailValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +80,7 @@ import { MenuFormComponent } from './menu/menu-form/menu-form.component';
     MatOptionModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatListModule,
   ],
   providers: [MenuService, MenuValidator],
   bootstrap: [AppComponent],

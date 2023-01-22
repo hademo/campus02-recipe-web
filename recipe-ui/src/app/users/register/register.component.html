@@ -6,22 +6,19 @@
         Registrierung fehlgeschlagen!
       </mat-error>
       <mat-form-field>
-        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-        <mat-error>
-          Bitte Username eingeben!
-        </mat-error>
+        <input matInput placeholder="Benutzername" [(ngModel)]="username" username name="username"
+          #usernameInput="ngModel" required>
+        <mat-error>{{getErrors(usernameInput)}}</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
-        <mat-error>
-          Bitte Email eingeben!
-        </mat-error>
+        <input matInput placeholder="Email" [(ngModel)]="email" email name="email" #emailInput="ngModel" type="email"
+          required>
+        <mat-error>{{getErrors(emailInput)}}</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" name="password" required>
-        <mat-error>
-          Bitte Passwort eingeben!
-        </mat-error>
+        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" password name="password"
+          #passwordInput="ngModel" required minlength="10">
+        <mat-error>{{getErrors(passwordInput)}}</mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary" [disabled]="!registerForm.form.valid">Registrieren</button>
     </form>
