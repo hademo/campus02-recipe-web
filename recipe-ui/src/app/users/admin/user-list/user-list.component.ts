@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from 'src/app/services/user/user.service';
 import { User } from 'src/lib/user.dto';
-import { DeleteUserDialogComponent } from '../../../delete-user-dialog/delete-user-dialog.component';
+import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-user-list',
@@ -11,14 +11,36 @@ import { DeleteUserDialogComponent } from '../../../delete-user-dialog/delete-us
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
-  displayedColumns: string[] = ['id', 'email', 'password', 'role', 'actions'];
+  usersFiltered: User[] = [];
+  displayedColumns: string[] = [
+    'id',
+    'email',
+    'password',
+    'role',
+    'links',
+    'actions',
+  ];
 
   constructor(private userService: UserService, public dialog: MatDialog) {}
 
   public ngOnInit(): void {
     this.userService.findAll().subscribe((data) => {
       this.users = data;
+      this.usersFiltered = [...this.users];
     });
+  }
+
+  public onSearchChange(event: Event): void {
+    const value = (event.target as HTMLInputElement).value.toLowerCase();
+
+    if (!value || value.length === 0) {
+      this.usersFiltered = [...this.users];
+      return;
+    }
+
+    this.usersFiltered = this.users.filter((user) =>
+      user.id.toLowerCase().includes(value)
+    );
   }
 
   public openDeleteModal(user: User): void {

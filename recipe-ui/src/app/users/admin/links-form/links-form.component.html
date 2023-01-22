@@ -1,0 +1,16 @@
+<form class="flex flex-col gap-2 mb-4" #form="ngForm">
+  <div class="flex gap-1 items-center" *ngFor="let item of links; let i = index; trackBy:track">
+    <mat-form-field appearance="fill" class="flex-grow">
+      <input matInput name="link_{{i}}" placeholder="Link*" required minlength="3" [ngModel]="links ? links[i] : ''"
+        (ngModelChange)="updateLink($event, i)" link #link="ngModel" />
+      <mat-error>{{getErrors(link)}}</mat-error>
+    </mat-form-field>
+    <mat-icon class="cursor-pointer" (click)="deleteLink(i)">
+      delete_forever</mat-icon>
+  </div>
+  <div class="items-center">
+    <button mat-mini-fab (click)="addLink($event)">
+      <mat-icon class="add-course-btn">add</mat-icon>
+    </button>
+  </div>
+</form>
