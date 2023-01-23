@@ -36,6 +36,11 @@
     <mat-icon>account_box</mat-icon>
     Benutzer
   </button>
+  <br>
+  <button mat-button routerLink="/menus" *ngIf="isAdmin()">
+    <mat-icon>fastfood</mat-icon>
+    Menüs
+  </button>
 </mat-menu>
 
 <router-outlet></router-outlet>

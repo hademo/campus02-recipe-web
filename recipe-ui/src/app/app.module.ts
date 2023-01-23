@@ -35,6 +35,10 @@ import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients
 import { LinksValidatorDirective } from 'src/lib/shared/validation/links-validator/links-validator.directive';
 import { LinksFormComponent } from './users/admin/links-form/links-form.component';
 import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validator/email-validator.directive';
+import { MenuComponent } from './menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';import { MenuService } from './services/menu/menu.service';
+import { MenuValidatorDirective } from 'src/lib/shared/validation/menus-validator/menus-validator';
+import { MenuFormComponent } from './menu/menu-form/menu-form.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,9 @@ import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validat
     LinksFormComponent,
     LinksValidatorDirective,
     EmailValidatorDirective,
+    MenuFormComponent,
+    MenuComponent,
+    MenuValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -75,8 +82,9 @@ import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validat
     MatOptionModule,
     MatDialogModule,
     MatListModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [MenuService, MenuValidatorDirective],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

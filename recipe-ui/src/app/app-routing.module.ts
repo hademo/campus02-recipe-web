@@ -2,6 +2,7 @@ import { Component, NgModule, Type } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from './guards/auth-admin/auth-admin.guard';
 import { AuthGuard } from './guards/auth/auth.guard';
+import { MenuComponent } from './menu/menu.component';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'menus',
+    component: MenuComponent,
   },
 ];
 

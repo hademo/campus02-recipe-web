@@ -12,7 +12,11 @@
       "email": "dummy@example.com",
       "password": "dummy-user-password",
       "role": "user",
-      "links": ["http://test.example.com", "http://test2.example.com", "http://test3.example.com"]
+      "links": [
+        "http://test.example.com",
+        "http://test2.example.com",
+        "http://test3.example.com"
+      ]
     },
     {
       "id": "new-user",
@@ -27,7 +31,10 @@
       "username": "dummy-user",
       "name": "Tiramisu",
       "description": "1. Bereite die Zutaten vor: 250 g Mascarpone, 3 Eier, 4 EL Zucker, 1/2 TL Zimt, 1/4 TL gemahlener Kardamom, 2 EL Amaretto, 500 g Mascarpone, 500 g Löffelbiskuits, 8 EL Kaffee, 8 EL Amaretto.\n2. Trenne die Eier in eine Schüssel mit Eigelb und eine Schüssel mit Eiweiß.\n3. Vermische Mascarpone, Eigelb, Zucker, Zimt und Kardamom in einer Schüssel.\n4. Schlage das Eiweiß mit einem Mixer auf und füge es langsam zur Mascarpone-Mischung hinzu.\n5. Mische den Amaretto in den Kaffee und tauche die Löffelbiskuits einzeln kurz in die Kaffee-Amaretto-Mischung.\n6. Schichte die Biskuits in eine ofenfeste Schüssel.\n7. Verteile die Mascarpone-Mischung über die Biskuits.\n8. Wiederhole die Schichtung noch einmal mit Biskuits und Mascarpone-Mischung.\n9. Sprühe die Oberseite mit der Kaffee-Amaretto-Mischung.\n10. Bestreue das Tiramisu mit Zimt und Kakaopulver.\n11. Stelle das Tiramisu für mindestens 3 Stunden in den Kühlschrank.\n12. Serviere das Tiramisu kalt.",
-      "ingredients": ["Mascarpone", "Zucker"],
+      "ingredients": [
+        "Mascarpone",
+        "Zucker"
+      ],
       "link": "https://www.youtube.com/embed/UaP_JGyRbU4",
       "id": 1
     },
@@ -35,7 +42,10 @@
       "username": "dummy-user",
       "name": "Palatschinken",
       "description": "1. Bereite die Zutaten vor: 250ml Milch, 2 Eier, 80g Mehl, 2 EL Öl, etwas Salz und Zucker\n2. Vermische in einer Schüssel die Milch, die Eier, das Mehl, das Öl und eine Prise Salz und Zucker. Verquirle die Zutaten gründlich, bis ein glatter Teig entsteht.\n3. Erhitze eine Pfanne mit etwas Öl und gib einen Esslöffel des Teiges hinein.\n4. Verteile den Teig gleichmäßig in der Pfanne und backe ihn bei mittlerer Hitze für etwa 2 Minuten.\n5. Drehe den Palatschinken auf die andere Seite und backe ihn noch einmal für 2 Minuten.\n6. Nimm den Palatschinken aus der Pfanne und serviere ihn warm mit Zimt und Zucker, Marmelade oder anderen Toppings.",
-      "ingredients": ["Eier", "Zucker"],
+      "ingredients": [
+        "Eier",
+        "Zucker"
+      ],
       "link": "https://www.youtube.com/embed/--Tp-Qf889M",
       "id": 2
     },
@@ -43,17 +53,35 @@
       "username": "new-user",
       "name": "Pizza",
       "description": "1. Gehe zum Supermarkt und hole Mehl, Hefe, Salz, Olivenöl und Tomatenmark.\n2. Knete den Teig. Vermische 500g Mehl, einen Teelöffel Hefe, einen Teelöffel Salz, 3 Esslöffel Olivenöl und 200ml warmes Wasser. Knete den Teig für etwa 10 Minuten.\n3. Lass den Teig an einem warmen Ort für etwa 1 Stunde ruhen.\n4. Rolle den Teig aus und lege ihn auf ein Backblech.\n5. Vermische ein Glas Tomatenmark mit Oregano, Knoblauch, Salz und Pfeffer.\n6. Bestreiche den Teig mit dem Tomatenmischung.\n7. Dekoriere die Pizza nach Belieben.\n8. Bake die Pizza im vorgeheizten Ofen bei 220°C für etwa 15 Minuten.\n9. Genieße die Pizza!",
-      "ingredients": ["Eier", "Tomato"],
+      "ingredients": [
+        "Eier",
+        "Tomato"
+      ],
       "link": "https://www.youtube.com/embed/G0PSxsM2czc",
       "id": 3
     },
     {
       "name": "Thunfischsalat",
       "description": "1. Zuerst nehmen Sie einen Dosen Thunfisch und gießen Sie ihn in eine Schüssel.\n2. Fügen Sie dann einige Schalotten und eine Schüssel geschnittene Tomaten hinzu.\n3. Fügen Sie einige gehackte Oliven, einige Kapern und einen Esslöffel Zitronensaft hinzu.\n4. Fügen Sie einige gehackte Petersilie, Dill oder andere Gewürze hinzu, wenn Sie wollen.\n5. Vermengen Sie alles sorgfältig.\n6. Fügen Sie etwas Salz und Pfeffer hinzu, um nach Ihrem Geschmack zu würzen.\n7. Servieren Sie den Thunfischsalat auf einem Salatblatt oder einer Scheibe Brot.",
-      "ingredients": ["Tomato"],
+      "ingredients": [
+        "Tomato"
+      ],
       "link": "https://www.youtube.com/embed/TTAKSB5-5Ew",
       "username": "new-user",
       "id": 4
+    }
+  ],
+  "menus": [
+    {
+      "name": "Hauptmenü",
+      "imageUrl": "https://test.example.com",
+      "entries": [
+        {
+          "id": 0,
+          "name": "Pizza"
+        }
+      ],
+      "id": 1
     }
   ]
 }
