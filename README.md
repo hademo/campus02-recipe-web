@@ -45,5 +45,6 @@ PW: new-user-password
     * Verwaltet die Zutaten
     * Two-Way-Binding mit den Rezept-Formular
 * **RecipeService**
+* Validator: **IngredientsValidator**
 **Spezial-Feature:** PDF Generierung beliebiger Rezepte
 
