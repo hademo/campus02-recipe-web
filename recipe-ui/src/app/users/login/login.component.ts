@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage/storage.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { getErrors } from 'src/lib/get-errors';
 
 @Component({
   selector: 'app-login',
@@ -41,9 +39,5 @@ export class LoginComponent implements OnInit {
       },
       error: () => (this.loginValid = false),
     });
-  }
-
-  public getErrors(control: NgModel) {
-    return getErrors(control);
   }
 }

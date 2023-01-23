@@ -3,17 +3,19 @@
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <h2>Login</h2>
       <mat-error *ngIf="!loginValid">
-        Login fehlgeschlagen!
+        Kombination aus Username und Password ist nicht korrekt!
       </mat-error>
       <mat-form-field>
-        <input matInput placeholder="Benutzername" [(ngModel)]="username" username name="username"
-          #usernameInput="ngModel" required>
-        <mat-error>{{getErrors(usernameInput)}}</mat-error>
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+        <mat-error>
+          Bitte Username eingeben!
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" password name="password"
-          #passwordInput="ngModel" required>
-        <mat-error>{{getErrors(passwordInput)}}</mat-error>
+        <input matInput type="password" placeholder="Passwort" [(ngModel)]="password" name="password" required>
+        <mat-error>
+          Bitte Passwort eingeben!
+        </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
     </form>

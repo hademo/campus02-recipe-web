@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage/storage.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { getErrors } from 'src/lib/get-errors';
 
 @Component({
   selector: 'app-register',
@@ -43,9 +41,5 @@ export class RegisterComponent implements OnInit {
         },
         error: () => (this.registerFailed = true),
       });
-  }
-
-  public getErrors(control: NgModel) {
-    return getErrors(control);
   }
 }

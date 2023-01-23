@@ -7,12 +7,7 @@ export function getErrors(control: NgModel) {
     if (control.hasError('required'))
       errors.push('Dieses Feld ist ein Pflichtfeld');
 
-    if (control.hasError('minlength'))
-      errors.push(
-        `Dieses Feld muss ${
-          control.getError('minlength').requiredLength
-        } Zeichen lang sein`
-      );
+    if (control.hasError('minlength')) errors.push('Dieses Feld ist zu kurz');
 
     if (control.hasError('maxlength')) errors.push('Dieses Feld ist zu lang');
 
@@ -29,14 +24,6 @@ export function getErrors(control: NgModel) {
           .getError('ingredient')
           ?.validIngredients.join(', ')}`
       );
-    }
-
-    if (control.hasError('url')) {
-      errors.push('Ungültige URL');
-    }
-
-    if (control.hasError('email')) {
-      errors.push('Ungültige E-Mail');
     }
   }
 
