@@ -36,7 +36,7 @@ import { LinksValidatorDirective } from 'src/lib/shared/validation/links-validat
 import { LinksFormComponent } from './users/admin/links-form/links-form.component';
 import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validator/email-validator.directive';
 import { MenuComponent } from './menu/menu.component';
-import { ReactiveFormsModule } from '@angular/forms';import { MenuService } from './services/menu/menu.service';
+import { ReactiveFormsModule } from '@angular/forms'; import { MenuService } from './services/menu/menu.service';
 import { MenuValidatorDirective } from 'src/lib/shared/validation/menus-validator/menus-validator';
 import { MenuFormComponent } from './menu/menu-form/menu-form.component';
 
@@ -84,7 +84,7 @@ import { MenuFormComponent } from './menu/menu-form/menu-form.component';
     MatListModule,
     ReactiveFormsModule,
   ],
-  providers: [MenuService, MenuValidatorDirective],
+  providers: [MenuValidatorDirective],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
