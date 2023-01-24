@@ -31,15 +31,15 @@
     <mat-icon>food_bank</mat-icon>
     Rezepte
   </button>
-  <br>
+  <br/>
+  <button mat-button routerLink="/menus">
+    <mat-icon>fastfood</mat-icon>
+    Menüs
+  </button>
+  <br />
   <button mat-button routerLink="/users" *ngIf="isAdmin()">
     <mat-icon>account_box</mat-icon>
     Benutzer
-  </button>
-  <br>
-  <button mat-button routerLink="/menus" *ngIf="isAdmin()">
-    <mat-icon>fastfood</mat-icon>
-    Menüs
   </button>
 </mat-menu>
 
