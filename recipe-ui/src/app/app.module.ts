@@ -35,6 +35,11 @@ import { IngredientsFormComponent } from './recipes/ingredients-form/ingredients
 import { LinksValidatorDirective } from 'src/lib/shared/validation/links-validator/links-validator.directive';
 import { LinksFormComponent } from './users/admin/links-form/links-form.component';
 import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validator/email-validator.directive';
+import { CreateMenuComponent } from './menus/create-menu/create-menu.component';
+import { DeleteMenuDialogComponent } from './menus/delete-menu-dialog/delete-menu-dialog.component';
+import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
+import { MenuListComponent } from './menus/menu-list/menu-list.component';
+import { EntriesFormComponent } from './menus/entry-form/entries-form.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { EmailValidatorDirective } from 'src/lib/shared/validation/email-validat
     LinksFormComponent,
     LinksValidatorDirective,
     EmailValidatorDirective,
+    CreateMenuComponent,
+    EditMenuComponent,
+    MenuListComponent,
+    DeleteMenuDialogComponent,
+    EntriesFormComponent,
   ],
   imports: [
     BrowserModule,
