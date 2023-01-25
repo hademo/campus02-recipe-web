@@ -3,20 +3,25 @@
     {
       "id": "admin-user",
       "email": "admin@example.com",
-      "password": "admin-user-password",
+      "password": "MyAdmin$987",
       "role": "admin",
-      "links": []
+      "links": [
+        "https://twitter.com/servermgmt"
+      ]
     },
     {
       "id": "dummy-user",
       "email": "dummy@example.com",
-      "password": "dummy-user-password",
+      "password": "HelloWorld!123",
       "role": "user",
-      "links": ["http://test.example.com", "http://test2.example.com", "http://test3.example.com"]
+      "links": [
+        "https://de-de.facebook.com/dummy.magazin/",
+        "https://www.instagram.com/notdummy"
+      ]
     },
     {
       "id": "new-user",
-      "password": "new-user-password",
+      "password": "NewPass?456",
       "email": "new-user@example.com",
       "role": "user",
       "links": []
@@ -27,7 +32,10 @@
       "username": "dummy-user",
       "name": "Tiramisu",
       "description": "1. Bereite die Zutaten vor: 250 g Mascarpone, 3 Eier, 4 EL Zucker, 1/2 TL Zimt, 1/4 TL gemahlener Kardamom, 2 EL Amaretto, 500 g Mascarpone, 500 g Löffelbiskuits, 8 EL Kaffee, 8 EL Amaretto.\n2. Trenne die Eier in eine Schüssel mit Eigelb und eine Schüssel mit Eiweiß.\n3. Vermische Mascarpone, Eigelb, Zucker, Zimt und Kardamom in einer Schüssel.\n4. Schlage das Eiweiß mit einem Mixer auf und füge es langsam zur Mascarpone-Mischung hinzu.\n5. Mische den Amaretto in den Kaffee und tauche die Löffelbiskuits einzeln kurz in die Kaffee-Amaretto-Mischung.\n6. Schichte die Biskuits in eine ofenfeste Schüssel.\n7. Verteile die Mascarpone-Mischung über die Biskuits.\n8. Wiederhole die Schichtung noch einmal mit Biskuits und Mascarpone-Mischung.\n9. Sprühe die Oberseite mit der Kaffee-Amaretto-Mischung.\n10. Bestreue das Tiramisu mit Zimt und Kakaopulver.\n11. Stelle das Tiramisu für mindestens 3 Stunden in den Kühlschrank.\n12. Serviere das Tiramisu kalt.",
-      "ingredients": ["Mascarpone", "Zucker"],
+      "ingredients": [
+        "Mascarpone",
+        "Zucker"
+      ],
       "link": "https://www.youtube.com/embed/UaP_JGyRbU4",
       "id": 1
     },
@@ -35,41 +43,78 @@
       "username": "dummy-user",
       "name": "Palatschinken",
       "description": "1. Bereite die Zutaten vor: 250ml Milch, 2 Eier, 80g Mehl, 2 EL Öl, etwas Salz und Zucker\n2. Vermische in einer Schüssel die Milch, die Eier, das Mehl, das Öl und eine Prise Salz und Zucker. Verquirle die Zutaten gründlich, bis ein glatter Teig entsteht.\n3. Erhitze eine Pfanne mit etwas Öl und gib einen Esslöffel des Teiges hinein.\n4. Verteile den Teig gleichmäßig in der Pfanne und backe ihn bei mittlerer Hitze für etwa 2 Minuten.\n5. Drehe den Palatschinken auf die andere Seite und backe ihn noch einmal für 2 Minuten.\n6. Nimm den Palatschinken aus der Pfanne und serviere ihn warm mit Zimt und Zucker, Marmelade oder anderen Toppings.",
-      "ingredients": ["Eier", "Zucker"],
+      "ingredients": [
+        "Eier",
+        "Zucker"
+      ],
       "link": "https://www.youtube.com/embed/--Tp-Qf889M",
       "id": 2
     },
     {
-      "username": "new-user",
+      "username": "dummy-user",
       "name": "Pizza",
       "description": "1. Gehe zum Supermarkt und hole Mehl, Hefe, Salz, Olivenöl und Tomatenmark.\n2. Knete den Teig. Vermische 500g Mehl, einen Teelöffel Hefe, einen Teelöffel Salz, 3 Esslöffel Olivenöl und 200ml warmes Wasser. Knete den Teig für etwa 10 Minuten.\n3. Lass den Teig an einem warmen Ort für etwa 1 Stunde ruhen.\n4. Rolle den Teig aus und lege ihn auf ein Backblech.\n5. Vermische ein Glas Tomatenmark mit Oregano, Knoblauch, Salz und Pfeffer.\n6. Bestreiche den Teig mit dem Tomatenmischung.\n7. Dekoriere die Pizza nach Belieben.\n8. Bake die Pizza im vorgeheizten Ofen bei 220°C für etwa 15 Minuten.\n9. Genieße die Pizza!",
-      "ingredients": ["Eier", "Tomato"],
+      "ingredients": [
+        "Eier",
+        "Tomato"
+      ],
       "link": "https://www.youtube.com/embed/G0PSxsM2czc",
       "id": 3
     },
     {
-      "username": "new-user",
+      "username": "admin-user",
       "name": "Thunfischsalat",
       "description": "1. Zuerst nehmen Sie einen Dosen Thunfisch und gießen Sie ihn in eine Schüssel.\n2. Fügen Sie dann einige Schalotten und eine Schüssel geschnittene Tomaten hinzu.\n3. Fügen Sie einige gehackte Oliven, einige Kapern und einen Esslöffel Zitronensaft hinzu.\n4. Fügen Sie einige gehackte Petersilie, Dill oder andere Gewürze hinzu, wenn Sie wollen.\n5. Vermengen Sie alles sorgfältig.\n6. Fügen Sie etwas Salz und Pfeffer hinzu, um nach Ihrem Geschmack zu würzen.\n7. Servieren Sie den Thunfischsalat auf einem Salatblatt oder einer Scheibe Brot.",
-      "ingredients": ["Tomato"],
+      "ingredients": [
+        "Tomato"
+      ],
       "link": "https://www.youtube.com/embed/TTAKSB5-5Ew",
       "id": 4
+    },
+    {
+      "username": "admin-user",
+      "name": "Caprese",
+      "description": "1. Die Tomaten waschen und in Scheiben schneiden. Den Mozzarella abtropfen lassen und ebenfalls in Scheiben schneiden.\\n2. Nun die Tomatenscheiben und die Mozzarellascheiben abwechselnd auf einem Teller anrichten.\\n3. Jetzt beträufelst Du die Caprese mit 2 EL dunklem Balsamico-Essig und 3 EL hochwertigem italienischen Olivenöl. Anschließend würzt Du mit Salz und Pfeffer.\\n4. Zum Abschluss kommen als Dekoration noch einige Basilikumblätter auf den Tomate-Mozzarella-Salat.",
+      "ingredients": [
+        "Tomato"
+      ],
+      "link": "https://www.youtube.com/embed/XCnUrJ7jjP0",
+      "id": 5
     }
   ],
   "menus": [
     {
-      "username": "dummy-user",
       "name": "Gourmet Menü",
       "imageUrl": "https://image.essen-und-trinken.de/11925442/t/Tu/v9/w960/r1/-/kabeljau-mit-ofengemuese-d0a5e075f77765f6172c405470010a3e-kabeljau-mit-ofengemuese-jpg--51217-.jpg",
-      "entries": ["Kabeljau", "Kaviar"],
-      "id": 0
+      "entries": [
+        "Kabeljau",
+        "Kaviar"
+      ],
+      "username": "dummy-user",
+      "id": 1
     },
     {
       "name": "Rustikales Menü",
       "imageUrl": "https://image.essen-und-trinken.de/11830908/t/oB/v9/w960/r1/-/rindersteak-mit-pilzsalat-4452036f841752d54c219039eb0da373-fjt2014060321-jpg--8050-.jpg",
-      "entries": ["Brot", "Steak", "Pommes"],
+      "entries": [
+        "Brot",
+        "Steak",
+        "Pommes"
+      ],
       "username": "dummy-user",
-      "id": 1
+      "id": 2
+    },
+    {
+      "name": "Burger Menü",
+      "imageUrl": "https://image.essen-und-trinken.de/11833532/t/tk/v9/w1440/r1/-/teriyaki-burger-5358e1de9c0677a955ab515470e908a1-et2015081122-jpg--9363-.jpg",
+      "entries": [
+        "Burger",
+        "Pommes",
+        "Salat",
+        "Sauce"
+      ],
+      "username": "admin-user",
+      "id": 3
     }
   ]
 }

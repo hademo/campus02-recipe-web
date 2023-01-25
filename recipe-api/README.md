@@ -1,2 +1,0 @@
-# Start
-Run `npm start`

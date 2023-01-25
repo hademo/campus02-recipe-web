@@ -8,7 +8,7 @@ import { StorageService } from './services/storage/storage.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Recipe UI';
+  title = 'Kitchen Master';
 
   constructor(private router: Router, private storageService: StorageService) {}
 
