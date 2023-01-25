@@ -1,0 +1,64 @@
+<div class="all-menus-container">
+  <mat-form-field class="menu-list-search">
+    <mat-label>Menü Suche</mat-label>
+    <input matInput placeholder="Menü suchen..." (keyup)="onSearchChange($event)">
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" class="h-full" routerLink="/menus/create">Menü
+      hinzufügen</button>
+  </div>
+  <table mat-table [dataSource]="menusFiltered" class="mat-elevation-z8 my-5">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="imageUrl">
+      <th mat-header-cell *matHeaderCellDef>Bild</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="image" [src]="element.imageUrl">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="entries">
+      <th mat-header-cell *matHeaderCellDef>Bestandteile</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-list>
+          <mat-list-item *ngIf="!element.entries || element.entries.length === 0">
+            <span class="entry">-</span>
+          </mat-list-item>
+          <mat-list-item *ngFor="let entry of element.entries">
+            <span class="entry">{{ entry }}</span>
+          </mat-list-item>
+        </mat-list>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Aktionen</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/menus', element.id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <button>
+          <mat-icon (click)="openDeleteModal(element)">
+            delete
+          </mat-icon>
+        </button>
+        <button>
+          <mat-icon (click)="toPdf(element)">
+            picture_as_pdf
+          </mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <div>
+    <button mat-mini-fab routerLink="/menus/create">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

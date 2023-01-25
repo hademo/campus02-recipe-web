@@ -1,7 +1,10 @@
-import { Component, NgModule, Type } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from './guards/auth-admin/auth-admin.guard';
 import { AuthGuard } from './guards/auth/auth.guard';
+import { CreateMenuComponent } from './menus/create-menu/create-menu.component';
+import { EditMenuComponent } from './menus/edit-menu/edit-menu.component';
+import { MenuListComponent } from './menus/menu-list/menu-list.component';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -54,6 +57,21 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'menus',
+    component: MenuListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'menus/create',
+    component: CreateMenuComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'menus/:id',
+    component: EditMenuComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

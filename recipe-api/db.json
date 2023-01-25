@@ -48,12 +48,28 @@
       "id": 3
     },
     {
+      "username": "new-user",
       "name": "Thunfischsalat",
       "description": "1. Zuerst nehmen Sie einen Dosen Thunfisch und gießen Sie ihn in eine Schüssel.\n2. Fügen Sie dann einige Schalotten und eine Schüssel geschnittene Tomaten hinzu.\n3. Fügen Sie einige gehackte Oliven, einige Kapern und einen Esslöffel Zitronensaft hinzu.\n4. Fügen Sie einige gehackte Petersilie, Dill oder andere Gewürze hinzu, wenn Sie wollen.\n5. Vermengen Sie alles sorgfältig.\n6. Fügen Sie etwas Salz und Pfeffer hinzu, um nach Ihrem Geschmack zu würzen.\n7. Servieren Sie den Thunfischsalat auf einem Salatblatt oder einer Scheibe Brot.",
       "ingredients": ["Tomato"],
       "link": "https://www.youtube.com/embed/TTAKSB5-5Ew",
-      "username": "new-user",
       "id": 4
+    }
+  ],
+  "menus": [
+    {
+      "username": "dummy-user",
+      "name": "Gourmet Menü",
+      "imageUrl": "https://image.essen-und-trinken.de/11925442/t/Tu/v9/w960/r1/-/kabeljau-mit-ofengemuese-d0a5e075f77765f6172c405470010a3e-kabeljau-mit-ofengemuese-jpg--51217-.jpg",
+      "entries": ["Kabeljau", "Kaviar"],
+      "id": 0
+    },
+    {
+      "name": "Rustikales Menü",
+      "imageUrl": "https://image.essen-und-trinken.de/11830908/t/oB/v9/w960/r1/-/rindersteak-mit-pilzsalat-4452036f841752d54c219039eb0da373-fjt2014060321-jpg--8050-.jpg",
+      "entries": ["Brot", "Steak", "Pommes"],
+      "username": "dummy-user",
+      "id": 1
     }
   ]
 }
